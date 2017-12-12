@@ -160,4 +160,12 @@ button:hover {
     
       <input type="checkbox" checked="checked"> Remember me
     
-      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>      
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>   
+      
+       <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>   
