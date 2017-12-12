@@ -202,9 +202,11 @@ input {
     
     
       
-       <div class="clearfix">
+        <div class="clearfix">
+	  <center>
+	    <button type="submit" class="signupbtn">Sign Up</button>
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+		</center>
       </div>
     </div>
   </form>
@@ -215,6 +217,13 @@ input {
 <script>
 // Get the modal
 var modal = document.getElementById('id01');
+
+//For Password Validation
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
