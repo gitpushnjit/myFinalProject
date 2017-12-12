@@ -155,8 +155,7 @@ button:hover {
     <label><b>Password</b></label><br>
       <input type="password" placeholder="Enter Password" name="psw" required><br>
 
-    <label><b>Repeat Password</b></label><br>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
+    
     
       <input type="checkbox" checked="checked"> Remember me
     
