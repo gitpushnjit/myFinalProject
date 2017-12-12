@@ -111,3 +111,18 @@ button:hover {
        width: 50%;
     }
 }
+
+
+
+</style>
+<body>
+<center>
+<h2> Signup Form</h2>
+<h3>Are you a New User ?</h3>
+<br>
+<h4>Click on the Sign Up Button below. </h4>
+<br>
+
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+</center>
