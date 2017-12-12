@@ -182,7 +182,7 @@ input {
       <input type="text" placeholder="Enter your Phone Number" name="phn" required><br>
       
     <label><b>Birthday</b></label><br>
-      <input type="text" placeholder="Enter your Date of Birth" name="bday" required><br>
+      <input type="text" placeholder="Enter your Date of Birth (mm/dd/yy)" name="bday" required><br>
 	  
     <label><b>Gender</b></label><br>
       <input type="text" placeholder="Enter your Gender" name="gender" required><br>
