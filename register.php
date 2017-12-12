@@ -187,8 +187,18 @@ input {
     <label><b>Gender</b></label><br>
       <input type="text" placeholder="Enter your Gender" name="gender" required><br>
       
-    <label><b>Password</b></label><br>
-    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required><br>
+    
+      <label><b>Password</b></label><br>
+      
+	  <input type="password" placeholder="Click here to view the Password Requirements" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required><br>
+
+	  <div id="message">
+	  <h3>Password must contain the following:</h3>
+	<h4 id="letter" class="invalid">A <b>lowercase</b> letter</h4>
+	<h4 id="capital" class="invalid">A <b>capital (uppercase)</b> letter</h4>
+	<h4 id="number" class="invalid">A <b>number</b></h4>
+	<h4 id="length" class="invalid">Minimum <b>6 characters</b></h4>
+	</div>
     
     
       
