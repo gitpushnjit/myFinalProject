@@ -149,5 +149,15 @@ button:hover {
     <label><b>Birthday</b></label><br>
       <input type="text" placeholder="Enter your Date of Birth" name="bday" required><br>
 	  
-	   <label><b>Gender</b></label><br>
-      <input type="text" placeholder="Enter your Gender" name="gender" required><br>    
+    <label><b>Gender</b></label><br>
+      <input type="text" placeholder="Enter your Gender" name="gender" required><br>
+      
+    <label><b>Password</b></label><br>
+      <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+    <label><b>Repeat Password</b></label><br>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
+    
+      <input type="checkbox" checked="checked"> Remember me
+    
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>      
