@@ -126,3 +126,28 @@ button:hover {
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
 </center>
+
+
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      
+	  <label><b>First Name</b></label><br>
+      <input type="text" placeholder="Enter your First Name" name="fname" required><br>
+	  
+	  <label><b>Last Name</b></label><br>
+      <input type="text" placeholder="Enter your Last Name" name="lname" required><br>
+      
+    <label><b>Email</b></label><br>
+      <input type="text" placeholder="Enter Email" name="email" required><br>
+	  
+	  <label><b>Phone Number</b></label><br>
+      <input type="text" placeholder="Enter your Phone Number" name="phn" required><br>
+      
+    <label><b>Birthday</b></label><br>
+      <input type="text" placeholder="Enter your Date of Birth" name="bday" required><br>
+	  
+	   <label><b>Gender</b></label><br>
+      <input type="text" placeholder="Enter your Gender" name="gender" required><br>    
