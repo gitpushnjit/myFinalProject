@@ -116,3 +116,14 @@ span.psw {
        width: 100%;
     }
 }
+
+
+</style>
+<body>
+<center>
+<h2>WSD Final Project</h2>
+<h3>Please click the LOGIN button below</h3>
+<br><br><br>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+</center>
