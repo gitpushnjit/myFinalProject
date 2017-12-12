@@ -33,8 +33,7 @@ button:hover {
     background-color: #f44336;
 }
 
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {float:left;width:50%}
+
 
 /* Add padding to container elements */
 .container {
@@ -61,24 +60,10 @@ button:hover {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 75%; /* Could be more or less, depending on screen size */
 }
 
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    color: #000;
-    font-size: 40px;
-    font-weight: bold;
-}
 
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
-}
 
 /* Add Zoom Animation */
 .animate {
@@ -113,7 +98,57 @@ button:hover {
 }
 
 
+/* Style all input fields */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
 
+
+/* Style the container for inputs */
+.container {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "Done";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "X";
+}
 </style>
 <body>
 <center>
@@ -153,13 +188,9 @@ button:hover {
       <input type="text" placeholder="Enter your Gender" name="gender" required><br>
       
     <label><b>Password</b></label><br>
-      <input type="password" placeholder="Enter Password" name="psw" required><br>
-
+    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required><br>
     
     
-      <input type="checkbox" checked="checked"> Remember me
-    
-      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>   
       
        <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
