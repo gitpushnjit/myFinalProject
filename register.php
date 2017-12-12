@@ -191,7 +191,8 @@ input {
       <label><b>Password</b></label><br>
       
 	  <input type="password" placeholder="Click here to view the Password Requirements" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required><br>
-
+    <input type="checkbox" onclick="myFunction()">Show Password<br>
+    
 	  <div id="message">
 	  <h3>Password must contain the following:</h3>
 	<h4 id="letter" class="invalid">A <b>lowercase</b> letter</h4>
@@ -215,6 +216,17 @@ input {
 
 
 <script>
+
+//funtion for showing and hiding password
+function myFunction() {
+    var x = document.getElementById("psw");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+
 // Get the modal
 var modal = document.getElementById('id01');
 
