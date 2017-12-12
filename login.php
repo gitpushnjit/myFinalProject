@@ -127,3 +127,10 @@ span.psw {
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 </center>
+
+
+
+<div id="id01" class="modal">
+  
+  <form action="/database.php">
+  
