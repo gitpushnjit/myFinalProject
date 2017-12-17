@@ -7,22 +7,22 @@ class controlTask extends corecontroller
     public static function show()
     {
         $record = todos::findOne($_REQUEST['id']);
-        self::getTemplate('show_task', $record);
+        self::getTemplate('showtask', $record);
     }
     //to call the show function the url is index.php?page=task&action=list_task
     public static function all()
     {
         //$records = todos::findAll();
         session_start();
-           if(key_exists('userID',$_SESSION)) {
-               $userID = $_SESSION['userID'];
+           if(key_exists('uid',$_SESSION)) {
+               $uid = $_SESSION['uid'];
            } else {
                header("Location: index.php?page=homepage&action=show");
            }
-        $userID = $_SESSION['userID'];
-        $records = todos::findTasksbyID($userID);
+        $uid = $_SESSION['uid'];
+        $records = todos::findTasksbyID($uid);
         
-        self::getTemplate('all_tasks', $records);
+        self::getTemplate('alltasks', $records);
     }
     //to call the show function the url is called with a post to: index.php?page=task&action=create
     //this is a function to create new tasks
@@ -30,34 +30,34 @@ class controlTask extends corecontroller
     public static function create()
     {   
         session_start();
-        if(key_exists('userID',$_SESSION)) {
-            $userID = $_SESSION['userID'];
+        if(key_exists('uid',$_SESSION)) {
+            $uid = $_SESSION['uid'];
         } else {
             header("Location: index.php?page=homepage&action=show");
         }
-        $userID = $_SESSION['userID'];
-        echo $userID;
+        $uid = $_SESSION['uid'];
+        echo $uid;
         print_r($_POST);
-        self::getTemplate('edit_task');
+        self::getTemplate('edittask');
     }
     
     //this is the function to view edit record form
     public static function edit()
     {
         $record = todos::findOne($_REQUEST['id']);
-        self::getTemplate('edit_task', $record);
+        self::getTemplate('edittask', $record);
     }
     //this would be for the post for sending the task edit form
     public static function store()
     {
         print_r($_POST);
         session_start();
-        if(key_exists('userID',$_SESSION)) {
-            $userID = $_SESSION['userID'];
+        if(key_exists('uid',$_SESSION)) {
+            $userID = $_SESSION['uid'];
         } else {
             header("Location: index.php?page=homepage&action=show");
         }
-        $userID = $_SESSION['userID'];
+        $uid = $_SESSION['uid'];
         if(isset($_REQUEST['id']) == 1){
             $record = todos::findOne($_REQUEST['id']);
         }
