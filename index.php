@@ -5,9 +5,13 @@ error_reporting(E_ALL);
 //Autoloader class to load all the different directories
 include_once "autoload.php";
 //put your database credentials here
-include_once "mydb.php";
+include_once "database.php";
+include("coreprocreq.php");
+
+
+  
 //this starts the program as a static.  Start tracing the program from here following the classes and methods being called
-$response = http\processRequest::createResponse();
+//$response = createResponse();
 //read the notes below
 //To make the final project, you need to add routes, controllers, and the html templates in the "pages" folder.
 //One of the big challenges will be to get the tasks to show up for the user that created them.
