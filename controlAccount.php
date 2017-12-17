@@ -1,7 +1,7 @@
 <?php
 
 //each page extends controller and the index.php?page=tasks causes the controller to be called
-class accountsController extends http\controller
+class controlAccount extends corecontroller
 {
     //each method in the controller is named an action.
     //to call the show function the url is index.php?page=task&action=show
