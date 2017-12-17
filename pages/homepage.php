@@ -132,7 +132,7 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/database.php">
+  <form class="modal-content animate" action="index.php?page=accounts&action=login" method="POST">
   
   
   
