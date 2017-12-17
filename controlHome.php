@@ -5,7 +5,7 @@
 //POST index.php?page=accounts?action=login for logging a  user in and get the userID out of the session
 //POST index.php?page=accounts?action=logout  this would destroy the session and return the user to the homepage
 //GET  index.php?page=accounts?action=show  this would be to show the user profile and you get the userID out of session
-class homepageController extends http\controller
+class controlHome extends corecontroller
 {
     public static function show()
     {
@@ -23,4 +23,3 @@ class homepageController extends http\controller
 //I just put a $_POST here but this is where you would put the code to add a record
         print_r($_POST);
     }
-}
