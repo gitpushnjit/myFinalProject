@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
+    <title>All Tasks</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 
@@ -20,19 +20,18 @@
 	$userID = $_SESSION['userID'];
 ?>
 <div class="header">
-	<h3>Welcome <?php echo $_SESSION["userFname"]; ?></h3>
-</div>
-<div>
-	<div style="width: 100%;float: right;">
-		//<div style="float: right;width: 35%;"><h6><a href="index.php?page=accounts&action=logout">Logout</a></h6></div>
-		<div style="float: right;width: 35%;"><h6><a href="index.php?page=accounts&action=edit&id=<?php echo $userID; ?>">Edit Profile</a></h6></div>
-		<div style="float: right;width: 30%;"><h6><a href="index.php?page=accounts&action=show&id=<?php echo $userID; ?>">View Profile</a></h6></div>
-	</div>
+	<h2>Welcome <?php echo $_SESSION["userFname"]; ?></h2>
 </div>
 
-<div style="width: 100%;">
-	<h6><a href="index.php?page=tasks&action=create">Create Task</a></h6>
-</div>
+	
+		<h4><a href="index.php?page=accounts&action=logout">Logout</a></h4> <br>
+		<h4><a href="index.php?page=accounts&action=edit&id=<?php echo $userID; ?>">Edit Your Profile</a></h4><br>
+		<h4><a href="index.php?page=accounts&action=show&id=<?php echo $userID; ?>">View Your Profile</a></h4><br>
+
+
+
+	<h4><a href="index.php?page=tasks&action=create">Create a Task</a></h4>
+
 
 	
 
