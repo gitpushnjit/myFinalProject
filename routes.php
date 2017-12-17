@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kwilliams
- * Date: 11/27/17
- * Time: 5:25 PM
- */
 class routes
 {
     public static function getRoutes()
@@ -18,114 +12,197 @@ class routes
         //Specify the request method
         $route->http_method = 'GET';
         //specify the page.  index.php?page=index.  (controller name / method called
-        $route->page = 'homepage';
+        $route->page = 'login';
         //specify the action that is in the URL to trigger this route index.php?page=index&action=show
         $route->action = 'show';
         //specify the name of the controller class that will contain the functions that deal with the requests
-        $route->controller = 'homepageController';
+        $route->controller = 'controlHome';
         //specify the name of the method that is called, the method should be the same as the action
         $route->method = 'show';
         //this adds the route to the routes array.
         $routes[] = $route;
+        
+        
         //this is the index.php route for POST
         //This is an examole of the post for index
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'create';
-        $route->page = 'homepage';
-        $route->controller = 'homepageController';
+        $route->page = 'login';
+        $route->controller = 'controlHome';
         $route->method = 'create';
         $routes[] = $route;
         //This is an examole of the post for tasks to show a task
         //GET METHOD index.php?page=tasks&action=show
+        
+        
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'show';
         $route->page = 'tasks';
-        $route->controller = 'tasksController';
+        $route->controller = 'controlTask';
         $route->method = 'show';
         $routes[] = $route;
         //This is an examole of the post for tasks to list tasks.  See the action matches the method name.
         //you need to add routes for create, edit, and delete
         //GET METHOD index.php?page=tasks&action=all
+        
+        
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'all';
         $route->page = 'tasks';
-        $route->controller = 'tasksController';
+        $route->controller = 'controlTask';
         $route->method = 'all';
         $routes[] = $route;
         //GET METHOD index.php?page=accounts&action=all
 //https://web.njit.edu/~kwilliam/mvc/index.php?page=accounts&action=all
+
+
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'all';
         $route->page = 'accounts';
-        $route->controller = 'accountsController';
+        $route->controller = 'controlAccount';
         $route->method = 'all';
         $routes[] = $route;
         //GET METHOD index.php?page=accounts&action=show
+        
+        
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'show';
         $route->page = 'accounts';
-        $route->controller = 'accountsController';
+        $route->controller = 'controlAccount';
         $route->method = 'show';
         $routes[] = $route;
         //This goes in the login form action method
         //GET METHOD index.php?page=accounts&action=login
+        
+        
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'login';
         $route->page = 'accounts';
-        $route->controller = 'accountsController';
+        $route->controller = 'controlAccount';
         $route->method = 'login';
         $routes[] = $route;
+        
+        
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'logout';
+        $route->page = 'accounts';
+        $route->controller = 'controlAccount';
+        $route->method = 'logout';
+        $routes[] = $route;
         //YOU WILL NEED TO ADD MORE ROUTES
+        
+        
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'delete';
         $route->page = 'tasks';
-        $route->controller = 'tasksController';
+        $route->controller = 'controlTask';
         $route->method = 'delete';
         $routes[] = $route;
+        
+        
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'delete';
+        $route->page = 'tasks';
+        $route->controller = 'controlTask';
+        $route->method = 'delete';
+        $routes[] = $route;
+        
+        
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'delete';
         $route->page = 'accounts';
-        $route->controller = 'accountsController';
+        $route->controller = 'controlAccount';
         $route->method = 'delete';
         $routes[] = $route;
+        
+        
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'edit';
         $route->page = 'accounts';
-        $route->controller = 'accountsController';
+        $route->controller = 'controlAccount';
         $route->method = 'edit';
         $routes[] = $route;
+        
+        
         $route = new route();
         $route->http_method = 'POST';
-        $route->action = 'save';
+        $route->action = 'edit';
         $route->page = 'accounts';
-        $route->controller = 'accountsController';
+        $route->controller = 'controlAccount';
         $route->method = 'save';
         $routes[] = $route;
         //this is the route for the reg form
+        
+        
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'register';
         $route->page = 'accounts';
-        $route->controller = 'accountsController';
+        $route->controller = 'controlAccount';
         $route->method = 'register';
         $routes[] = $route;
         //this handles the reg post to create the user
+        
+        
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'register';
         $route->page = 'accounts';
-        $route->controller = 'accountsController';
+        $route->controller = 'controlAccount';
         $route->method = 'store';
         $routes[] = $route;
+        //GET CREATE TASKS PAGE
+        
+        
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'create';
+        $route->page = 'tasks';
+        $route->controller = 'controlTask';
+        $route->method = 'create';
+        $routes[] = $route;
+        //POST CREATE TASKS
+        
+        
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'create';
+        $route->page = 'tasks';
+        $route->controller = 'controlTask';
+        $route->method = 'store';
+        $routes[] = $route;
+        //EDIT TASK - GET
+        
+        
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'edit';
+        $route->page = 'tasks';
+        $route->controller = 'controlTask';
+        $route->method = 'edit';
+        $routes[] = $route;
+        //EDIT TASK - POST
+        
+        
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'edit';
+        $route->page = 'tasks';
+        $route->controller = 'controlTask';
+        $route->method = 'store';
+        $routes[] = $route;
+        
         return $routes;
     }
     public static function create($http_method,$action,$page,$controller,$method) {
