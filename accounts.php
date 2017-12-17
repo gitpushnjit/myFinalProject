@@ -1,5 +1,5 @@
 <?php
-class accounts extends \database\collection
+class accounts extends corecollection
 {
     protected static $modelName = 'account';
     //This is the function to write to find user by ID for login.
