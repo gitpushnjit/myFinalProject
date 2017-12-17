@@ -43,7 +43,13 @@ class controlAccount extends corecontroller
             //this is a mistake you can fix...
             //Turn the set password function into a static method on a utility class.
             $user->password = $user->setPassword($_POST['password']);
-            $user->save();
+            $uid=$user->save();
+            
+            session_start();
+            $_SESSION["userID"] = $uid;
+            $_SESSION["userEmail"] = $user->email;
+            $_SESSION["userFname"] = $user->fname;
+            $_SESSION["userLname"] = $user->lname;
             //you may want to send the person to a
             // login page or create a session and log them in
             // and then send them to the task list page and a link to create tasks
@@ -52,7 +58,7 @@ class controlAccount extends corecontroller
             //You can make a template for errors called error.php
             // and load the template here with the error you want to show.
            // echo 'already registered';
-            $error = 'already registered';
+            $error = 'The user is already registered';
             self::getTemplate('error', $error);
         }
     }
@@ -63,6 +69,15 @@ class controlAccount extends corecontroller
     }
 //this is used to save the update form data
     public static function save() {
+    
+            session_start();
+        if(key_exists('userID',$_SESSION)) {
+            $userID = $_SESSION['userID'];
+        } else {
+            header("Location: index.php?page=homepage&action=show");
+        }
+         $user = accounts::findOne($_REQUEST['id']);
+
         $user = accounts::findOne($_REQUEST['id']);
         $user->email = $_POST['email'];
         $user->fname = $_POST['fname'];
@@ -89,7 +104,7 @@ class controlAccount extends corecontroller
         //        $record = accounts::findUser($_POST['email']);
         $user = accounts::findUserbyEmail($_REQUEST['email']);
         if ($user == FALSE) {
-            echo 'user not found';
+            echo 'No user found';
         } else {
             if($user->checkPassword($_POST['password']) == TRUE) {
                 echo 'login';
@@ -98,7 +113,7 @@ class controlAccount extends corecontroller
                 //forward the user to the show all todos page
                 print_r($_SESSION);
             } else {
-                echo 'password does not match';
+                echo 'Entered username - password combination does not match';
             }
         }
     }
