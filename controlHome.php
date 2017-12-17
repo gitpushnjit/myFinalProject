@@ -9,14 +9,18 @@ class controlHome extends corecontroller
 {
     public static function show()
     {
+    session_start();
+    
+    
+    	session_destroy();
 //this is the show method that is called to show the sites name in a template any array passed in will be accepted by the template function as a model
 //You could get fancy with the homepage and check for the userID in the session and hide/show the login / registration links when no session
 //If there is a session then you should show the user profile link
 //the template is an HTML page with PHP inserted in it.  just put an if/else statement to check for the session and show correct links
-        $templateData['site_name'] = 'mysite';
+        $templateData['site_name'] = 'My Task Creator';
 //template data contains what will show up in the $data variable in the homepage template
 //the name of the template 'homepage' becomes 'homepage.php' in the pages directory
-        self::getTemplate('homepage', $templateData);
+        self::getTemplate('login', $templateData);
     }
     public static function create()
     {
