@@ -30,7 +30,7 @@ class homepageController extends http\controller
     	session_start();
 
     	session_destroy();
-        $templateData['site_name'] = 'To-Do App';
+        $templateData['site_name'] = 'Task Creator';
 //template data contains what will show up in the $data variable in the homepage template
 
 //the name of the template 'homepage' becomes 'homepage.php' in the pages directory
