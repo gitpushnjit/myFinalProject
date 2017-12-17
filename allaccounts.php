@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
+    <title>All Accounts</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 
@@ -16,13 +16,13 @@
 </head>
 
 <body>
-<h1>All Accounts</h1>
+<h1>All records from Accounts is displayed here</h1>
 
-<h1> HI</h1>
+<h1> Hello Everyone..!!</h1>
 
 <?php
 //this is how you print something
-print utility\htmlTable::genarateTableFromMultiArray($data);
+print htmlTable::genarateTableFromMultiArray($data);
 ?>
 
 
