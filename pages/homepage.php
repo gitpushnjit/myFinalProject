@@ -44,7 +44,7 @@
     </div>
 
     <div style="width: 100%;padding-top: 50px;">
-        If you are a new user, please <a href="index.php?page=accounts&action=register">Sign Up!</a> here!
+        New user ?? Please click <a href="index.php?page=accounts&action=register">here</a> ..!
     </div>
 </div>
 
