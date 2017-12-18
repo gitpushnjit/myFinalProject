@@ -28,14 +28,14 @@ print_r($data);
 
     Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"><br>
     Email: <input type="text" name="email" value="<?php echo $data->email; ?>"><br>
-    Password: <input type="password" name="password" value="<?php echo $data->password; ?>" pattern=".{6,}" title="Password must be at least 6 characters" required><br>
+    Password: <input type="password" name="password" value="<?php echo $data->password; ?>" pattern=".{6,}" title="Your password must must contain at least 6 characters" required><br>
     <input type="submit" value="Submit form">
 </form>
 
 <h6><a href="index.php?page=tasks&action=all">Back</a></h6>
 
 <!-- <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="delete">Delete</button>
+    <button type="submit" form="form1" value="delete">Delete this record</button>
 </form> -->
 
 
