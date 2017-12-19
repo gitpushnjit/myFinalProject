@@ -1,72 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 25px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+}
 
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+button:hover {
+    opacity: 0.4;
+}
 
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
 
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-</head>
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
 
-<body style="width: 100%;">
 
 
-<span style="text-align: center;padding-right: 50%;"><h1>
-    <?php
-    //this how to print some data;
-    echo $data['site_name'];
-    ?> </h1></span>
+.container {
+    padding: 16px;
+}
 
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+
+</style>
+<body>
+<center>
+<h2>WSD Final Project</h2>
+<h3>Please click the LOGIN button below</h3>
+<br><br><br>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button><br>
 <h3><a href="index.php?page=accounts&action=all">Show All Accounts</a></h3>
 <h3><a href="index.php?page=tasks&action=all">Show All Tasks</a></h3> 
-<div style="width: 100%;padding-left: 30%;"> 
-    <div style="width: 100%;padding-left: 40px;">
-        <form action="index.php?page=accounts&action=login" method="POST">
 
-            <div class="container">
-                <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="email" required><br><br>
+</center>
 
-                <label><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required><br><br>
 
-                <div style="float: left;width: 50%;padding-left: 150px;"><button type="submit">Login</button></div>
 
-            </div>
-        </form>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="index.php?page=accounts&action=login" method="POST">
+  
+  
+  
+  <div class="container">
+      <label><b>Username</b></label><br>
+      <input type="text" placeholder="Enter Username" name="uname" required><br>
+
+      <label><b>Password</b></label><br>
+      <input type="password" placeholder="Enter Password" name="psw" required><br>
+        
+      <button type="submit">Login</button><br>
+      <input type="checkbox" checked="checked"> Remember me
     </div>
 
-    <div style="width: 100%;padding-top: 50px;">
-        New user ?? Please click <a href="index.php?page=accounts&action=register">here</a> ..!
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
+  </form>
 </div>
 
 
-<script src="js/scripts.js"></script>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
